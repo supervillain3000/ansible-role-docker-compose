@@ -1,0 +1,12 @@
+---
+version: '3.9'
+
+services:
+  django-app:
+    container_name: "django-app"
+    image: registry.gitlab.com/supervillain30001/practice/django-app:latest
+    command: gunicorn filesharing.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - /mnt/shared:/usr/src/app/public/static
+    ports:
+      - "8000:8000"
