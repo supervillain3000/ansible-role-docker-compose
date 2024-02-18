@@ -13,3 +13,4 @@
   docker_compose:
     project_src: /home/{{ ansible_user }}/
     state: present
+    recreate: true
